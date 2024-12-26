@@ -174,4 +174,5 @@ async def get_result(prompt_id, client_id):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=5003, debug=True)
+    port = int(os.getenv("PORT", 5003))  # 從環境變數讀取端口，默認為 5003
+    uvicorn.run(app, host="0.0.0.0", port=port, debug=True)
