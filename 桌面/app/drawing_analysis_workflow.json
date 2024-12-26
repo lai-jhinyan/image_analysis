@@ -1,0 +1,71 @@
+{
+  "6": {
+    "inputs": {
+      "query": "Describe subjectively what you see in this image? How do you feel? The tone and style of writing should be humane and close to people's hearts. Write a diary to describe what you observed and how you felt. Use few words and try to be concise and concise. Don’t use too many words. \n{Answer my question in Chinese.}",
+      "debug": "enable",
+      "url": "http://127.0.0.1:11434",
+      "model": "minicpm-v:latest",
+      "keep_alive": 5,
+      "speak_and_recognation": true,
+      "format": "text",
+      "images": [
+        "52",
+        0
+      ]
+    },
+    "class_type": "OllamaVision",
+    "_meta": {
+      "title": "Ollama Vision"
+    }
+  },
+  "50": {
+    "inputs": {
+      "from_translate": "auto",
+      "to_translate": "zh-tw",
+      "manual_translate": false,
+      "Manual Trasnlate": "Manual Trasnlate",
+      "text": [
+        "53",
+        0
+      ],
+      "speak_and_recognation": true
+    },
+    "class_type": "GoogleTranslateTextNode",
+    "_meta": {
+      "title": "Google Translate Text Node"
+    }
+  },
+  "52": {
+    "inputs": {
+      "image": "drawing.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "載入圖像"
+    }
+  },
+  "53": {
+    "inputs": {
+      "text": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "顯示文本"
+    }
+  },
+  "54": {
+    "inputs": {
+      "text": [
+        "50",
+        0
+      ]
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "顯示文本"
+    }
+  }
+}
