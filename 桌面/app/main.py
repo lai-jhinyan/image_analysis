@@ -24,7 +24,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-COMFY_SERVER = "http://127.0.0.1:8188"
+COMFY_SERVER = "http://127.0.0.1:8188"  # 替換為您的 ComfyUI 服務地址
 OUTPUT_DIR = "c:/Users/User/Desktop/app/draw_api/output"
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 UPLOAD_FOLDER = os.path.join(BASE_DIR, "uploads")
@@ -69,8 +69,8 @@ async def upload_image(image: UploadFile = File(...)):
 
 @app.post("/analyze")
 async def analyze_image(
-    filename: str = Query(...),
-    background_tasks: BackgroundTasks
+    background_tasks: BackgroundTasks,  # 移動到第一個參數
+    filename: str = Query(...)
 ):
     """
     接受文件名，將圖片分析任務加入後台，並返回任務 ID。
@@ -250,3 +250,6 @@ if __name__ == "__main__":
     import uvicorn
     port = int(os.getenv("PORT", 5003))  # 從環境變數讀取端口，默認為 5003
     uvicorn.run(app, host="0.0.0.0", port=port, debug=True)
+
+
+
