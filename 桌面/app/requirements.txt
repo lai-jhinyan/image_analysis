@@ -3,5 +3,3 @@ uvicorn[standard]
 httpx
 websockets
 pillow
-json
-logging
